@@ -20,6 +20,7 @@ Read one lesson at a time. Open the matching Java file beside it, and use **Cmd 
 | 10 | [JSON and Jackson](10-json-and-jackson-explained.md) | Keys and values, arrays, pretty-printing, and extracting response fields. |
 | 11 | [From API result to shelf](11-api-book-to-shelf-explained.md) | Reading the author, creating a Book, adding it to the shelf, and checking the updated count. |
 | 12 | [Java foundation finished](12-java-foundation-finished.md) | Current simplified code, error handling, missing-data rules, offline tests, and the transition to MCP. |
+| 13 | [GitHub between two laptops](13-github-two-laptops.md) | Saving and pushing work, updating the personal laptop, account access, and commit identity. |
 
 The service and JUnit guides already existed and remain the detailed lessons for those topics. The new guides connect to them rather than replacing them.
 

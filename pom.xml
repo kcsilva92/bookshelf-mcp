@@ -2,6 +2,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- Spring Boot 4.0.8 requires at least Java 17 and is compatible with versions up to and including Java 26. 
+     Spring Framework 7.0.9 or above is also required. 
+     https://docs.spring.io/spring-boot/4.0/system-requirements.html -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.8</version>
+        <relativePath/>
+    </parent>
 
     <groupId>com.ketheleen</groupId>
     <artifactId>bookshelf-mcp</artifactId>
@@ -11,6 +20,18 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <!-- https://docs.spring.io/spring-ai/reference/getting-started.html -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>2.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!-- Jackson reads JSON and formats it for readable terminal output. -->
         <dependency>
@@ -18,11 +39,15 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.21.2</version>
         </dependency>
+        <!-- Provide an MCP server that communicates over HTTP. -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-server-webmvc</artifactId>
+        </dependency>
         <!-- JUnit is needed only when compiling and running tests. -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.13.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
