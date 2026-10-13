@@ -1,0 +1,14 @@
+# Maven build output
+target/
+
+# Local editor settings
+.vscode/
+.cursor/
+
+# macOS files
+.DS_Store
+
+# Local secrets
+.env
+.env.*
+!.env.example
